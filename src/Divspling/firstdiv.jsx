@@ -14,22 +14,29 @@ import BlogSection from "../Components/BlogSection";
 import FAQSection from "../Components/FAQSection";
 import FooterSection from "../Components/FooterSection";
 // import FloatingLines from "../Components/FloatingLines.jsx";
-import { lazy, Suspense } from "react";
+// import { lazy, Suspense } from "react";
 
-const FloatingLines = lazy(() =>
-  import("../Components/FloatingLines.jsx")
-);
+// const FloatingLines = lazy(() =>
+//   import("../Components/FloatingLines.jsx")
+// );
+import FloatingLinesClient from "../Components/FloatingLinesClient.jsx";
 
-import Nav from '../Components/Nav.jsx';
+import Nav from "../Components/Nav.jsx";
 function FirstDiv() {
   return (
     <>
-              <Nav />
+      <Nav />
 
-      <div  id="Home" className=" relative w-full min-h-screen bg-black  flex justify-center items-center flex-col  ">
-         {/* <Nav /> */}
+      <div
+        id="Home"
+        className=" relative w-full min-h-screen bg-black  flex justify-center items-center flex-col  "
+      >
+        {/* <Nav /> */}
         {/* <img src={bg} className=" w-full h-full relative  " /> */}
-        <div id="Home" className=" w-full h-[150vh] relative  shadow-lg after:absolute after:bottom-0 after:left-0 after:w-full after:h-5 after:bg-green-500/30 after:blur-md ">
+        <div
+          id="Home"
+          className=" w-full h-[150vh] relative  shadow-lg after:absolute after:bottom-0 after:left-0 after:w-full after:h-5 after:bg-green-500/30 after:blur-md "
+        >
           {/* <FloatingLines
             linesGradient={["#00884A", "#050505", "#012811"]}
             animationSpeed={0.8}
@@ -40,7 +47,8 @@ function FirstDiv() {
             parallax
             parallaxStrength={0.1}
           /> */}
-          <Suspense fallback={<div className="w-full h-full bg-black" />}>
+
+          {/* <Suspense fallback={<div className="w-full h-full bg-black" />}>
   <FloatingLines
     linesGradient={["#00884A", "#050505", "#012811"]}
     animationSpeed={0.8}
@@ -51,8 +59,17 @@ function FirstDiv() {
     parallax
     parallaxStrength={0.1}
   />
-</Suspense>
-
+</Suspense> */}
+          <FloatingLinesClient
+            linesGradient={["#00884A", "#050505", "#012811"]}
+            animationSpeed={0.8}
+            interactive
+            bendRadius={10.5}
+            bendStrength={1.3}
+            mouseDamping={0.18}
+            parallax
+            parallaxStrength={0.1}
+          />
         </div>
         {/* first half st*/}
         <div className="w-full min-h-screen absolute top-0 left-0 flex flex-col justify-center items-center pt-20  ">
@@ -258,8 +275,8 @@ function FirstDiv() {
           </section>
           {/* last div ed under first di */}
           <FeatureCards />
-           <div className="w-full" id="Features">
-          <AdvancedFeatures />
+          <div className="w-full" id="Features">
+            <AdvancedFeatures />
           </div>
           <TrackSection />
           <VideoSection />
@@ -267,11 +284,11 @@ function FirstDiv() {
           <CompareSection />
           <StatsSection />
           <div className="w-full" id="Blogs">
-          <BlogSection />
+            <BlogSection />
           </div>
           <FAQSection />
-           <div className="w-full" id="Contact">
-          <FooterSection />
+          <div className="w-full" id="Contact">
+            <FooterSection />
           </div>
         </div>
         {/* second half ed */}

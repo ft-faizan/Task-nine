@@ -244,7 +244,7 @@ export default function FloatingLines({
   parallaxStrength = 0.2,
   mixBlendMode = 'screen'
 }) {
-  if (typeof window === "undefined") return null;
+  // if (typeof window === "undefined") return null;
 
   const containerRef = useRef(null);
   // const containerRef = useRef(null);
