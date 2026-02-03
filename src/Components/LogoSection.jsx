@@ -1,7 +1,7 @@
 
 
 
-import LogoLoop from "../Components/logoloop.jsx";
+import LogoLoop from "../Components/LogoLoop.jsx";
 
 import netflix   from "../assets/item-5.png";
 import disney    from "../assets/item -4.png";
