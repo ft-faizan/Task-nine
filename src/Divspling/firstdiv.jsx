@@ -1,4 +1,4 @@
-import bg from "../assets/banner-avater.png";
+// import bg from "../assets/banner-avater.png";
 import dash from "../assets/main-dashboard.png";
 import SplitText from "../Components/SplitText.jsx";
 import LogoSection from "../Components/LogoSection.jsx";
