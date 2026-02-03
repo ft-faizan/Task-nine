@@ -1,19 +1,48 @@
 
+// import { defineConfig } from "vite";
+// import react from "@vitejs/plugin-react";
+// import tailwindcss from "@tailwindcss/vite";
+
+// export default defineConfig({
+//   plugins: [react(), tailwindcss()],
+
+//   // ✅ Important: Optimize for Vercel
+//   optimizeDeps: {
+//     exclude: ["three"], // safe even if you don't use it
+//   },
+
+//   build: {
+//     sourcemap: false,        // reduce memory
+//     minify: "esbuild",       // faster build
+//     target: "esnext",
+//     cssCodeSplit: true,
+//     chunkSizeWarningLimit: 2000,
+//   },
+// });
+
+
+
+
+
+
+
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  base: "./", // ✅ THIS FIXES NETLIFY
+
   plugins: [react(), tailwindcss()],
 
-  // ✅ Important: Optimize for Vercel
   optimizeDeps: {
-    exclude: ["three"], // safe even if you don't use it
+    exclude: ["three"],
   },
 
   build: {
-    sourcemap: false,        // reduce memory
-    minify: "esbuild",       // faster build
+    sourcemap: false,
+    minify: "esbuild",
     target: "esnext",
     cssCodeSplit: true,
     chunkSizeWarningLimit: 2000,
