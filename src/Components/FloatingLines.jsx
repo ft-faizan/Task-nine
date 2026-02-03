@@ -244,7 +244,10 @@ export default function FloatingLines({
   parallaxStrength = 0.2,
   mixBlendMode = 'screen'
 }) {
+  if (typeof window === "undefined") return null;
+
   const containerRef = useRef(null);
+  // const containerRef = useRef(null);
   const targetMouseRef = useRef(new Vector2(-1000, -1000));
   const currentMouseRef = useRef(new Vector2(-1000, -1000));
   const targetInfluenceRef = useRef(0);

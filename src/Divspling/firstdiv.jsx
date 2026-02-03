@@ -13,7 +13,13 @@ import StatsSection from "../Components/StatsSection";
 import BlogSection from "../Components/BlogSection";
 import FAQSection from "../Components/FAQSection";
 import FooterSection from "../Components/FooterSection";
-import FloatingLines from "../Components/FloatingLines.jsx";
+// import FloatingLines from "../Components/FloatingLines.jsx";
+import { lazy, Suspense } from "react";
+
+const FloatingLines = lazy(() =>
+  import("../Components/FloatingLines.jsx")
+);
+
 import Nav from '../Components/Nav.jsx';
 function FirstDiv() {
   return (
@@ -24,7 +30,7 @@ function FirstDiv() {
          {/* <Nav /> */}
         {/* <img src={bg} className=" w-full h-full relative  " /> */}
         <div id="Home" className=" w-full h-[150vh] relative  shadow-lg after:absolute after:bottom-0 after:left-0 after:w-full after:h-5 after:bg-green-500/30 after:blur-md ">
-          <FloatingLines
+          {/* <FloatingLines
             linesGradient={["#00884A", "#050505", "#012811"]}
             animationSpeed={0.8}
             interactive
@@ -33,7 +39,20 @@ function FirstDiv() {
             mouseDamping={0.18}
             parallax
             parallaxStrength={0.1}
-          />
+          /> */}
+          <Suspense fallback={<div className="w-full h-full bg-black" />}>
+  <FloatingLines
+    linesGradient={["#00884A", "#050505", "#012811"]}
+    animationSpeed={0.8}
+    interactive
+    bendRadius={10.5}
+    bendStrength={1.3}
+    mouseDamping={0.18}
+    parallax
+    parallaxStrength={0.1}
+  />
+</Suspense>
+
         </div>
         {/* first half st*/}
         <div className="w-full min-h-screen absolute top-0 left-0 flex flex-col justify-center items-center pt-20  ">
